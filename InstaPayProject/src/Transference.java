@@ -3,7 +3,7 @@ public abstract class Transference extends InstaPayService{
 
     protected double ValueTransferred;
 
-    public abstract boolean Transfer();
+    public abstract boolean Transfer(String WalletProviderType);
 
     public abstract boolean checkReceiverExist(String ReceiverAccNum);
 

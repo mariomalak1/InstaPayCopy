@@ -1,7 +1,7 @@
 public class InstaPayTransference extends Transference{
 
     @Override
-    public boolean Transfer() {
+    public boolean Transfer(String WalletProviderType) {
         return false;
     }
 

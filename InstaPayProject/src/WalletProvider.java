@@ -9,6 +9,9 @@ public abstract class WalletProvider {
         Type = type;
     }
 
-    public abstract boolean checkWalletExist();
     public abstract boolean checkReceiverExist(String AccNum);
+
+    public boolean checkWalletExist(){
+        return true;
+    }
 }

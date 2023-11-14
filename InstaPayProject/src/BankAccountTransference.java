@@ -1,9 +1,13 @@
 public class BankAccountTransference extends Transference{
     private String BankName;
 
+    public BankAccountTransference(String bankName){
+        this.BankName = bankName;
+    }
+
     @Override
-    public boolean Transfer() {
-        return false;
+    public boolean Transfer(String WalletProviderType) {
+        return true;
     }
 
     @Override
