@@ -1,7 +1,7 @@
 public abstract class Transference extends InstaPayService{
     protected String ReceiverAccNum;
 
-    protected double ValueTransfered;
+    protected double ValueTransferred;
 
     public abstract boolean Transfer();
 
@@ -15,15 +15,15 @@ public abstract class Transference extends InstaPayService{
         this.ReceiverAccNum = ReceiverNum;
     }
 
-    public void SetValueTransfered(double valueTransfered){
-        this.ValueTransfered = valueTransfered;
+    public void setValueTransferred(double valueTransferred){
+        this.ValueTransferred = valueTransferred;
     }
 
     public String GetReceiverAccNum(){
         return ReceiverAccNum;
     }
 
-    public double getValueTransfered() {
-        return ValueTransfered;
+    public double getValueTransferred() {
+        return ValueTransferred;
     }
 }

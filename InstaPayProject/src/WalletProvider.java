@@ -10,4 +10,5 @@ public abstract class WalletProvider {
     }
 
     public abstract boolean checkWalletExist();
+    public abstract boolean checkReceiverExist(String AccNum);
 }
