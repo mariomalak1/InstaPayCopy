@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public abstract class RegestrationService {
@@ -6,6 +7,7 @@ public abstract class RegestrationService {
     private String PhoneRegex = "^(010|011|012|015)\\d{8}$";
     private String StrongPsswordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$";
     protected User user;
+    UserFactory userfactory = new UserFactory();
     public boolean VerifyEmail(){
         Pattern pattern = Pattern.compile(EmailRegex);
         Matcher matcher = pattern.matcher(user.GetEmail());
@@ -30,6 +32,21 @@ public abstract class RegestrationService {
     public void SetUser(User user){
         this.user = user;
     }
+    public User GetUser(){
+        return user;
+    }
+    public Boolean OtpChecker(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Write the num which is sent to you in SMS message");
+        String OTP = scanner.nextLine();
+        if (OTP.equals("123"))
+            return true;
+        else {
+            System.out.println("Wrong number");
+            return  false;
+        }
+
+    }
     public boolean VerifyData(){
         if(!VerifyEmail()){
             System.out.println("Please write ur Email in the following format test@example.com");
@@ -47,7 +64,10 @@ public abstract class RegestrationService {
             System.out.println("Weak password. Please enter a strong password containing at least one lowercase letter, one uppercase letter, one digit, and one special character, with a minimum length of 8 characters.");
             return false;
         }
+        if(!OtpChecker())
+            return false;
         return true;
     }
     public abstract User Register();
+    public abstract void FillData(String PhoneNum, String Name, String Pass , String mail);
 }

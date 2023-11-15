@@ -16,9 +16,6 @@ public abstract class User {
     public void SetPhone(String phone){
         this.Phone = phone;
     }
-    public void SetType(String type){
-        this.Type = type;
-    }
     public String GetUserName(){
         return this.UserName;
     }
@@ -31,7 +28,9 @@ public abstract class User {
     public String GetPassword(){
         return this.Password;
     }
-    //protected Bills UtiltyBillsPayment;
-
-
+    public String GetType(){
+        return this.Type;
+    }
+    public abstract void SetType();
+    public abstract double GetBalance();
 }

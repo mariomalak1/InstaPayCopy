@@ -1,6 +1,6 @@
-public abstract class WalletProviderFactory {
+public class WalletProviderFactory {
 
-    public static WalletProvider CreateWalletProvider(String type){
+    public WalletProvider CreateWalletProvider(String type){
         if (type.equalsIgnoreCase("1")){
             return new BankProvidesWallet();
         }

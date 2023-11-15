@@ -1,17 +1,9 @@
 public class Wallet {
-    public class BankAccount {
-        public String MobNum;
         public double Balance;
-        //public WallerProvider walletProvider;     
+        private WalletProvider walletProvider;
 
-        public void SetMobNum(String MobNum){
-            this.MobNum = MobNum;
-        }
         public void SetBalance(double Balance){
             this.Balance = Balance;
-        }
-        public String GetMobNum(){
-            return MobNum;
         }
         public double GetBalance(){
             return Balance;
@@ -22,12 +14,12 @@ public class Wallet {
         public void DecrementBalance(Double Amount){
             Balance -=Amount;
         }
-        // public void AddWalletProvider(WallerProvider walletProvider){
-        //     this.WallerProvider = walletProvider;
-        // }
-        // public WalletProvider GetWalletProvider(){
-        //     return this.walletProvider
-        // }
+        
+         public void AddWalletProvider(WalletProvider walletProvider){
+             this.walletProvider = walletProvider;
+         }
+         public WalletProvider GetWalletProvider(){
+             return this.walletProvider;
+         }
     }
     
-}

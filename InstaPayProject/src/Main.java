@@ -1,5 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        InstaPayManager instaPayManager = new InstaPayManager();
+
+
+
+        // Call the Start method to simulate user interaction
+        instaPayManager.Start();
     }
 }
