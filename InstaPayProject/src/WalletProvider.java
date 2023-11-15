@@ -4,12 +4,10 @@ public abstract class WalletProvider {
     String GetWalletProviderType(){
         return Type;
     }
-
-    public void setWalletProviderType(String type){
-        Type = type;
-    }
-
     public abstract boolean checkReceiverExist(String AccNum);
 
-    public abstract boolean checkWalletExist(String WalletProvoderName , String PhoneNum);
+    public abstract boolean checkWalletExist(String WalletProvoderName , String PhoneNum , String UserType);
+    public abstract void IncrementBalance(double Amount , Wallet wallet);
+    public abstract void SetType();
+    public abstract void DecrementBalance(double Amount , Wallet wallet);
 }

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public abstract class Transference extends InstaPayService{
     protected String ReceiverAccNum;
 
@@ -5,7 +7,7 @@ public abstract class Transference extends InstaPayService{
 
     public abstract boolean Transfer(String WalletProviderType);
 
-    public abstract boolean checkReceiverExist(String ReceiverAccNum);
+    public abstract User checkReceiverExist(String ReceiverInfo, ArrayList<User> users,String UserType);
 
     public boolean CheckEnoughBalance(){
         return true;

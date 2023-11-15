@@ -1,9 +1,19 @@
 public abstract class User {
+    public User() {
+    }
     protected String UserName;
     protected String Email;
     protected String Password;
     protected String Phone;
     protected String Type;
+
+
+    public User(String username,String pass,String mail,String phone){
+        this.UserName=username;
+        this.Password = pass;
+        this.Email = mail;
+        this.Phone = phone;
+    }
     public void setUserName(String name){
         this.UserName = name;
     }
@@ -33,4 +43,5 @@ public abstract class User {
     }
     public abstract void SetType();
     public abstract double GetBalance();
+
 }

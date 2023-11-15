@@ -7,10 +7,7 @@ public class BankUser extends User {
     }
 
     public BankUser(String username,String pass,String mail,String phone,double balance,String bankname,String accNum){
-        this.UserName = username;
-        this.Password = pass;
-        this.Email = mail;
-        this.Phone = phone;
+        super(username , pass,mail,phone);
         this.bankAccount.SetBalance(balance);
         this.bankAccount.SetBankName(bankname);
         this.bankAccount.SetAccNum(accNum);
@@ -32,4 +29,5 @@ public class BankUser extends User {
     public double GetBalance() {
         return bankAccount.GetBalance();
     }
+
 }

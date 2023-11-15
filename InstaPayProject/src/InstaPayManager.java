@@ -21,6 +21,10 @@ public class InstaPayManager {
     private Storage storage= new Storage();
     private RegestrationServiceFactory registerFactory = new RegestrationServiceFactory();
 
+    public ArrayList<User> getUsers() {
+        return users;
+    }
+
     public Boolean Login(){
         
         Scanner scanner = new Scanner(System.in);
@@ -79,11 +83,13 @@ public class InstaPayManager {
                 if(registration!=null){
                     registration.FillData( phoneNumber ,name,pass,Email);
                     if(registration.VerifyData()){
-                        if (registration.Register() != null) {
-                            users.add(registration.GetUser());
-                            storage.UpdateUsersList(users);
-                            System.out.println("Successfully registered");
-                            break;
+                        if(RegestrationService.IsUniqeData(users,phoneNumber,Email)){
+                            if (registration.Register() != null) {
+                                users.add(registration.GetUser());
+                                storage.UpdateUsersList(users);
+                                System.out.println("Successfully registered");
+                                break;
+                            }
                         }
                     }
                 }
@@ -135,4 +141,5 @@ public class InstaPayManager {
             }
         }
     }
+
 }

@@ -7,7 +7,7 @@ public class MenuFactory {
             return new BankUserMenu(bankUser,manager);
         } else if (user.GetType().equals("WalletUser")){
             WalletUser walletUser = (WalletUser) user;
-            return new WalletUserMenu(manager);
+            return new WalletUserMenu(walletUser,manager);
         }else
             return null;
     }

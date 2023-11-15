@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -70,4 +71,18 @@ public abstract class RegestrationService {
     }
     public abstract User Register();
     public abstract void FillData(String PhoneNum, String Name, String Pass , String mail);
+
+    public static Boolean IsUniqeData(ArrayList<User> users , String Phone , String Mail){
+        for (User IteratedUser : users){
+            if(IteratedUser.GetPhone().equals(Phone)){
+                System.out.println("This phone number is linked with instapay account, Please enter different phone number");
+                return false;
+            }
+            if(IteratedUser.GetEmail().equals(Mail)){
+                System.out.println("This Email number is linked with instapay account, Please enter different Email");
+                return false;
+            }
+        }
+        return true;
+    }
 }

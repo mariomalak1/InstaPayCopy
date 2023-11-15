@@ -10,12 +10,24 @@ public class Storage {
     private ArrayList<User> Users = new ArrayList<>();
 
     public void FillArraysWithDummyData(){
-        BankUser bankUser = new BankUser("asememad","asemEmad?47","asememad984@gmail.com","01115908715",1000.50,"cib","20210191");
+        BankUser bankUser = new BankUser("asememad","asemEmad?47","asememaasdd984@gmail.com","01115908715",1000.50,"cib","20210191");
         Users.add(bankUser);
-        BankUser bankUser2 = new BankUser("ahmedemad","asemEmad?47","asememad984@gmail.com","01115908693",500.50,"ahly","240210191");
+        BankUser bankUser2 = new BankUser("ahmedemad","asemEmad?47","asemasemad984@gmail.com","01115908693",500.50,"ahly","240210191");
         Users.add(bankUser2);
-        BankUser bankUser3 = new BankUser("shehabemad","asemEmad?47","asememad984@gmail.com","011159088641",700.50,"cib","20210191");
+        BankUser bankUser3 = new BankUser("shehabemad","asemEmad?47","asememaasdd984@gmail.com","011159088641",700.50,"cib","20210191");
         Users.add(bankUser3);
+
+        TelecoummunicationCopmany vodafone = new TelecoummunicationCopmany();
+        WalletUser walletUser = new WalletUser("asoomOmda" , "asemEmad?47","asememad47@yahoo.com","01112402575",1500,vodafone);
+        Users.add(walletUser);
+
+        ElectronicPayment Fawry = new ElectronicPayment();
+        WalletUser walletUser2 = new WalletUser("asoomOmda2" , "asemEmad?47","asememad490@yahoo.com","01112391066",1500,Fawry);
+        Users.add(walletUser2);
+
+        BankProvidesWallet Cip = new BankProvidesWallet();
+        WalletUser walletUser3 = new WalletUser("asoomOmda3" , "asemEmad?47","asememad417@yahoo.com","01116502575",1500,Cip);
+        Users.add(walletUser3);
 
         BillsData billsData = new BillsData("20",100,"9582","WaterBills");
         WaterBill waterBill = new WaterBill("15mayCity",billsData);

@@ -26,7 +26,7 @@ public class WalletUserRegestration extends RegestrationService {
         }
         System.out.println("enter Wallet Provider Name: ");
         String WalletProviderName = scanner.nextLine();
-        if(!walletProvider.checkWalletExist(WalletProviderName,this.user.GetPhone()))
+        if(!walletProvider.checkWalletExist(WalletProviderName,this.user.GetPhone() , this.user.GetType()))
             return null;
         else{
             wallet.AddWalletProvider(walletProvider);
@@ -35,8 +35,7 @@ public class WalletUserRegestration extends RegestrationService {
     }
         public void FillData(String PhoneNum, String Name, String Pass , String mail){
             Random random = new Random();
-            double randomValue = 1000 + random.nextDouble() * Double.MAX_VALUE;
-            wallet.SetBalance(randomValue);
+            wallet.SetBalance(1000);
             user.setEmail(mail);
             user.SetPassword(Pass);
             user.setUserName(Name);

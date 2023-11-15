@@ -1,6 +1,6 @@
 public class RegestrationServiceFactory {
     public RegestrationService CreateRegestrationType(String type){
-        if(type.equals("1")){
+        if(type.equals("1") || type.equals("")){
             return new BankUserRegetration(); 
         }
         else if (type.equals("2")){
